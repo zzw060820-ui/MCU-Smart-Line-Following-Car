@@ -1,0 +1,15 @@
+{
+  "policy": "god_c_rule",
+  "episodes": 300,
+  "eval_seed": 12345,
+  "success_rate": 1.0,
+  "avg_lost_per_episode": 0.0,
+  "avg_turns_per_episode": 1.36,
+  "avg_steps_per_episode": 236.1,
+  "avg_reward": 317.339,
+  "failure_breakdown": {
+    "lost": 0,
+    "timeout": 0
+  },
+  "note": "简化模拟环境指标，不代表真实小车性能。"
+}

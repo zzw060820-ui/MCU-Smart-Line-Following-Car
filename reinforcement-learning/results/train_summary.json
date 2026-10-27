@@ -1,0 +1,14 @@
+{
+  "episodes": 6000,
+  "seed": 0,
+  "alpha": 0.1,
+  "gamma": 0.95,
+  "epsilon_start": 1.0,
+  "epsilon_min": 0.05,
+  "epsilon_decay": 0.995,
+  "turn_penalty": -0.05,
+  "final_epsilon": 0.05,
+  "final_window_success_rate": 0.8067,
+  "best_window_success_rate": 0.8833,
+  "note": "以上全部为【简化模拟环境】指标，不代表真实 51 小车性能。实体车性能必须另行实测。"
+}

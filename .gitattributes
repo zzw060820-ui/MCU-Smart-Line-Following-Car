@@ -1,0 +1,2 @@
+# Preserve copied source encodings and bytes, including GBK C/BAT files.
+* -text
