@@ -28,12 +28,13 @@ Listings/
 *.bak
 *.tmp
 *.log
-# External headers with unconfirmed redistribution permission
-AT89X52.H
-AT89X52.h
-uart.h
-Boebot.h
-BoeBot.h
+*.uvproj.bak
+*.uvopt.bak
+*.plg
+*.crf
+*.o
+.DS_Store
+# Required firmware headers are tracked; preserve their original notices.
 # Python and tools
 __pycache__/
 *.py[cod]

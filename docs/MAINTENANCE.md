@@ -1,23 +1,13 @@
 # 上传与后续维护
 
-拟用名称：MCU-Smart-Line-Following-Car；建议可见性：Private。本次准备阶段没有创建远程仓库、提交或推送。实际账号、上传清单与本地检查结果在仓库外的待确认清单中。
+现有仓库：https://github.com/zzw060820-ui/MCU-Smart-Line-Following-Car 。检查时为 Public，默认分支 main；继续使用现有仓库和提交历史，不新建仓库，不改变可见性。
 
-用户明确批准后再创建空的私有仓库、在发布目录初始化 Git、使用用户确认的提交身份提交并推送。当前本机未检测到 gh；GitHub 插件已连接，但插件认证不等于 Git HTTPS/SSH 推送已经认证。若需要浏览器登录或 Git Credential Manager，应由用户完成，不读取或展示 Token。
+本次同步以 2026-10-28 收工记录采用的 FIELD-1 为来源。Ant 是旧基线，FIELD-2、FSM、CAL26 等仍在本地保留，不因文件日期较新而替换主版本。
 
-后续更新仅复制原工程中明确要发布的文件到发布目录，保留原编码；先看差异、更新 README 与结果来源，检查密钥和第三方依赖，再提交。不要对原始工程运行批量同步删除。
+在独立准备副本中复制明确来源的源码、必要依赖、工程和测试，保持字节与编码。README 以当前源码和有出处的实测记录为准；不要批量镜像删除原始目录。
 
-已有远程仓库且认证完成后，在发布目录的 PowerShell 中逐步执行：
+上传前检查工作区和暂存差异、来源哈希、敏感信息、依赖、测试、最终清单；任何删除、关键配置替换或第三方材料收录应明确列出。只有用户明确批准最终清单后才能提交并推送。
 
-```powershell
-git status --short
-git diff
-git add -- README.md docs firmware reinforcement-learning scripts .gitignore .gitattributes
-git diff --cached --stat
-git diff --cached
-git commit -m "Update firmware and research documentation"
-git push
-```
+获准后重新读取远程 main，并 fetch 取得必要的新提交；若远程前移，先分析差异，必要时更新清单并重新确认。没有分叉且清单未变时，正常提交至 main 并推送 origin main。禁止强制推送、重置历史和清理未知文件。
 
-不要使用 git add -f 提交被忽略的依赖、凭据或输出，不要强制推送。首次提交前检查 Git 身份；隐私邮箱应使用 GitHub 账号设置中本人确认的 noreply 地址，不根据账号名称猜测邮箱。若已存在同名远程库，先核对仓库与现有历史，不直接覆盖。
-
-推送后核对远程默认分支提交 SHA、文件树与本地提交一致，确认可见性为 Private。转 Public 前再次审核所有提交历史，而不只检查最新目录。
+推送后核对远程提交 SHA、分支及主要文件树。插件能读取仓库不代表 Git 命令行已完成推送认证；如需登录使用正常凭据管理器流程，不读取或打印令牌。
